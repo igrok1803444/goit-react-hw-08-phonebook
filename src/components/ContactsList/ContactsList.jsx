@@ -5,10 +5,9 @@ import {
   selectError,
   selectIsLoading,
   selectVisibleContacts,
-} from 'redux/selectors';
+} from 'redux/contacts/selectors';
 
-import { useEffect } from 'react';
-import { deleteContact, getContacts } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();
@@ -20,9 +19,7 @@ export const ContactsList = () => {
   function deleteHandler(id) {
     dispatch(deleteContact(id));
   }
-  useEffect(() => {
-    dispatch(getContacts());
-  }, [dispatch]);
+
   return (
     <>
       <List>

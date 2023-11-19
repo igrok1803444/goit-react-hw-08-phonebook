@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { Label, Form, SubmitButton } from './AddContactForm.styled';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 
 export const AddContactForm = () => {
   const dispatch = useDispatch();
