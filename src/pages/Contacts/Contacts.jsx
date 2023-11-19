@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import { AddContactForm } from 'components/AddContactForm/AddContactForm';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import { Filter } from 'components/Filter/Filter';
@@ -12,11 +13,11 @@ const Contacts = () => {
     dispatch(getContacts());
   }, [dispatch]);
   return (
-    <main>
+    <Box maxWidth={900} margin={[0, 'auto']} padding={'24px 0'}>
       <AddContactForm />
       <Filter />
       <ContactsList />
-    </main>
+    </Box>
   );
 };
 export default Contacts;

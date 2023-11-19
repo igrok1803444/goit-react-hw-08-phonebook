@@ -1,28 +1,31 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
+  margin: 0 auto;
   padding: 12px;
 
   width: 230px;
 
-  border: 1px solid #008077;
+  border: 1px solid green;
+  border-radius: 16px;
 `;
 export const Label = styled.label`
   display: flex;
   justify-content: space-between;
 
   margin-bottom: 16px;
-`;
-export const SubmitButton = styled.button`
-  display: block;
+  & input {
+    margin-left: 4px;
 
-  margin: 0 auto;
+    padding: 0 4px;
 
-  padding: 12px 24px;
+    width: 100%;
+    border: 1px solid green;
 
-  background-color: #008077;
+    outline: none;
 
-  border: none;
-
-  color: white;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-timing-function: 250ms;
+  }
 `;

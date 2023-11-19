@@ -1,5 +1,5 @@
+import { Input } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Label, Input } from './Filter.styled';
 import { selectStatusFilter } from 'redux/contacts/selectors';
 import { setFilter } from 'redux/filterSlice';
 export const Filter = () => {
@@ -9,8 +9,17 @@ export const Filter = () => {
     dispatch(setFilter(event.target.value));
   };
   return (
-    <Label>
-      Find contact: <Input type="text" value={filter} onChange={filterHandle} />
-    </Label>
+    <Input
+      type="text"
+      value={filter}
+      onChange={filterHandle}
+      margin={'0 auto'}
+      marginTop={'24px'}
+      w={230}
+      display={'block'}
+      colorScheme={'green'}
+      placeholder="Find Contacts"
+      _focusVisible={{ borderColor: 'green', boxShadow: '0 0 0 1px green' }}
+    />
   );
 };

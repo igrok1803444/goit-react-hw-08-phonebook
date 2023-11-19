@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { Label, Form, SubmitButton } from './AddContactForm.styled';
+import { Label, Form } from './AddContactForm.styled';
 import { addContact } from 'redux/contacts/operations';
+import { Button } from '@chakra-ui/react';
 
 export const AddContactForm = () => {
   const dispatch = useDispatch();
@@ -24,22 +25,22 @@ export const AddContactForm = () => {
   return (
     <Form onSubmit={formHandler}>
       <Label>
-        {' '}
         Name:
         <input type="text" name="name" required />
       </Label>
       <Label>
-        {' '}
         Phone:
-        <input
-          type="tel"
-          name="number"
-          required
-          // pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
-          placeholder="000-00-00"
-        />
+        <input type="tel" name="number" required placeholder="000-00-00" />
       </Label>
-      <SubmitButton type="submit">Add contact</SubmitButton>
+      <Button
+        margin={'0 auto'}
+        display={'block'}
+        variant={'outline'}
+        colorScheme={'green'}
+        type="submit"
+      >
+        Add contact
+      </Button>
     </Form>
   );
 };

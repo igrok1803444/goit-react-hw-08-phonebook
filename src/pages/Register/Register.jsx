@@ -1,3 +1,4 @@
+import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
@@ -13,20 +14,58 @@ const Register = () => {
     event.currentTarget.reset();
   }
   return (
-    <form onSubmit={handleForm}>
-      <label>
-        Name: <input type="text" name="name" required />
-      </label>
-      <label>
-        Email:
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        Password:
-        <input type="password" name="password" required minLength={7} />
-      </label>
-      <button type="submit">Register now!</button>
-    </form>
+    <Box maxWidth={900} margin={'0 auto'} marginTop={'24px'} padding={'8px 0'}>
+      <form onSubmit={handleForm}>
+        <FormControl
+          width={'230px'}
+          margin={'0 auto'}
+          padding={'12px'}
+          border={'1px solid green'}
+          borderRadius={'16px'}
+        >
+          <FormLabel htmlFor="name">Name:</FormLabel>
+          <Input
+            id="name"
+            type="text"
+            name="name"
+            _focusVisible={{
+              borderColor: 'green',
+              boxShadow: '0 0 0 1px green',
+            }}
+          />
+          <FormLabel htmlFor="email">Email:</FormLabel>
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            _focusVisible={{
+              borderColor: 'green',
+              boxShadow: '0 0 0 1px green',
+            }}
+          />
+          <FormLabel htmlFor="password">Password:</FormLabel>
+          <Input
+            id="password"
+            type="password"
+            name="password"
+            _focusVisible={{
+              borderColor: 'green',
+              boxShadow: '0 0 0 1px green',
+            }}
+          />
+          <Button
+            type="submit"
+            margin={'0 auto'}
+            marginTop={'8px'}
+            display={'block'}
+            variant={'outline'}
+            colorScheme={'green'}
+          >
+            Login
+          </Button>
+        </FormControl>
+      </form>
+    </Box>
   );
 };
 export default Register;

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { BallTriangle } from 'react-loader-spinner';
-import { List, DeleteButton } from './ContactsList.styled';
+
 import {
   selectError,
   selectIsLoading,
@@ -8,6 +8,8 @@ import {
 } from 'redux/contacts/selectors';
 
 import { deleteContact } from 'redux/contacts/operations';
+import { Button, ListItem, UnorderedList } from '@chakra-ui/react';
+import { DeleteIcon } from '@chakra-ui/icons';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();
@@ -22,7 +24,7 @@ export const ContactsList = () => {
 
   return (
     <>
-      <List>
+      <UnorderedList margin={'0 auto'} marginTop={'24px'} styleType={'none'}>
         {isLoading && (
           <BallTriangle
             height={100}
@@ -39,14 +41,21 @@ export const ContactsList = () => {
         )}
         {error && <h1> Вибачте виникла помилка</h1>}
         {visibleContacts.map(({ name, id, number }) => (
-          <li key={id}>
+          <ListItem key={id} margin={'0 auto'} width={'max-content'}>
             {name}: {number}
-            <DeleteButton type="button" onClick={() => deleteHandler(id)}>
-              delete
-            </DeleteButton>
-          </li>
+            <Button
+              type="button"
+              onClick={() => deleteHandler(id)}
+              backgroundColor={'white'}
+              color={'red'}
+              border={'none'}
+              _hover={{ backgroundColor: 'red', color: 'white' }}
+            >
+              <DeleteIcon fill={'currentcolor'} />
+            </Button>
+          </ListItem>
         ))}
-      </List>
+      </UnorderedList>
     </>
   );
 };
