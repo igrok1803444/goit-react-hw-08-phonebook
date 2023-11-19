@@ -9,7 +9,6 @@ const authInitialState = {
   token: null,
   isLoggedin: false,
   isLoading: false,
-  isRefresh: false,
   error: null,
 };
 const handlePending = state => {
