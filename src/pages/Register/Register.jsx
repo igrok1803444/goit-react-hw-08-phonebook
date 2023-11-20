@@ -61,7 +61,7 @@ const Register = () => {
             variant={'outline'}
             colorScheme={'green'}
           >
-            Login
+            Register now
           </Button>
         </FormControl>
       </form>
