@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <ChakraProvider>
-        <BrowserRouter basename="/goit-react-hw-08-phonebook">
+        <BrowserRouter>
           <PersistGate persistor={persister}>
             <App />
           </PersistGate>
